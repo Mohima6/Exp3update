@@ -1,5 +1,5 @@
-Hypothesis Test Results for EEG Data – Ledoit-Wolf Estimator (45 samples per class)
-===============================================================================
+Hypothesis Test Results for EEG Data â€“ Ledoit-Wolf Estimator (45 samples per class)
+
 
 ECM Geometry:
   Biswas-Ghosh test: p = 0.0130
