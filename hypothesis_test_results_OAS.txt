@@ -1,0 +1,12 @@
+Hypothesis Test Results for EEG Data using OAS estimator (45 samples per class)
+==========================================================================
+
+ECM Geometry:
+  Biswas-Ghosh test: p = 0.0270
+  MMD test:          p = 0.0460
+  Wasserstein test:  p = 0.0650
+
+LEC Geometry:
+  Biswas-Ghosh test: p = 0.0210
+  MMD test:          p = 0.0640
+  Wasserstein test:  p = 0.0700

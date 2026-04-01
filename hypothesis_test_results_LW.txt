@@ -1,0 +1,12 @@
+Hypothesis Test Results for EEG Data – Ledoit-Wolf Estimator (45 samples per class)
+===============================================================================
+
+ECM Geometry:
+  Biswas-Ghosh test: p = 0.0130
+  MMD test:          p = 0.0380
+  Wasserstein test:  p = 0.0440
+
+LEC Geometry:
+  Biswas-Ghosh test: p = 0.0130
+  MMD test:          p = 0.0430
+  Wasserstein test:  p = 0.0520

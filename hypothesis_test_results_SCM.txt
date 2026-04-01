@@ -1,0 +1,12 @@
+Hypothesis Test Results for EEG Data using SCM (empirical correlation) – 45 samples per class
+==========================================================================
+
+ECM Geometry:
+  Biswas-Ghosh test: p = 0.0170
+  MMD test:          p = 0.0330
+  Wasserstein test:  p = 0.0710
+
+LEC Geometry:
+  Biswas-Ghosh test: p = 0.0290
+  MMD test:          p = 0.0340
+  Wasserstein test:  p = 0.0720
