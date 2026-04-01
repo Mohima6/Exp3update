@@ -1,5 +1,5 @@
-Hypothesis Test Results for EEG Data using SCM (empirical correlation) – 45 samples per class
-==========================================================================
+Hypothesis Test Results for EEG Data using SCM (empirical correlation) â€“ 45 samples per class
+
 
 ECM Geometry:
   Biswas-Ghosh test: p = 0.0170
