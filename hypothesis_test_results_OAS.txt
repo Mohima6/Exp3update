@@ -1,5 +1,4 @@
 Hypothesis Test Results for EEG Data using OAS estimator (45 samples per class)
-==========================================================================
 
 ECM Geometry:
   Biswas-Ghosh test: p = 0.0270
