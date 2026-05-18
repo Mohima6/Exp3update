@@ -1,25 +1,15 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-
 from sklearn.manifold import MDS
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.covariance import LedoitWolf
-
 from scipy.spatial.distance import pdist, squareform
 from sklearn.metrics.pairwise import pairwise_kernels
-
-# =========================================================
-# SETTINGS
-# =========================================================
-
 input_folder = "processed_data_epochs"
 MAX_SAMPLES_PER_CLASS = 45
 
-# =========================================================
-# HYPOTHESIS TESTS
-# =========================================================
 
 def biswas_ghosh_test(X, Y, n_perm=1000):
     """
@@ -145,10 +135,6 @@ def wasserstein_test(X, Y, n_perm=1000):
 
     return p_value
 
-# =========================================================
-# LOAD DATA
-# =========================================================
-
 X_all = []
 labels_all = []
 
@@ -173,9 +159,6 @@ for file in sorted(os.listdir(input_folder)):
 
 print(f"Minimum time points across all epochs: {min_time}")
 
-# =========================================================
-# TRUNCATE TO SAME LENGTH
-# =========================================================
 
 X_truncated = []
 labels_truncated = []
@@ -193,9 +176,6 @@ labels_all = np.concatenate(labels_truncated)
 print("Original samples:", len(labels_all))
 print("Unique labels:", np.unique(labels_all))
 
-# =========================================================
-# RELABEL CLASSES
-# =========================================================
 
 unique_labels = np.unique(labels_all)
 
@@ -206,9 +186,6 @@ label_map = {
 
 labels_all = np.array([label_map[l] for l in labels_all])
 
-# =========================================================
-# BALANCED SAMPLING
-# =========================================================
 
 idx1 = np.where(labels_all == 1)[0][:MAX_SAMPLES_PER_CLASS]
 idx2 = np.where(labels_all == 2)[0][:MAX_SAMPLES_PER_CLASS]
@@ -220,9 +197,6 @@ labels = labels_all[idx]
 
 print("After sampling:", len(labels))
 
-# =========================================================
-# LEdoit-Wolf CORRELATION MATRIX
-# =========================================================
 
 def compute_lw_fc(trial):
     """
@@ -242,10 +216,6 @@ def compute_lw_fc(trial):
 
     return corr
 
-# =========================================================
-# COMPUTE FC MATRICES
-# =========================================================
-
 fc_matrices = []
 
 for trial in X:
@@ -258,9 +228,6 @@ for trial in X:
 
 fc_matrices = np.array(fc_matrices)
 
-# =========================================================
-# FEATURE EXTRACTION
-# =========================================================
 
 def extract_lower(mat):
 
@@ -280,16 +247,10 @@ lec_features = np.array([
     for m in fc_matrices
 ])
 
-# =========================================================
-# NORMALIZATION
-# =========================================================
 
 ecm_features = StandardScaler().fit_transform(ecm_features)
 lec_features = StandardScaler().fit_transform(lec_features)
 
-# =========================================================
-# HYPOTHESIS TESTING
-# =========================================================
 
 print("\n--- Running hypothesis tests on ECM geometry ---")
 
@@ -333,9 +294,6 @@ print(f"Biswas-Ghosh p-value (LEC): {bg_lec:.4f}")
 print(f"MMD p-value (LEC): {mmd_lec:.4f}")
 print(f"Wasserstein p-value (LEC): {wasser_lec:.4f}")
 
-# =========================================================
-# SAVE RESULTS
-# =========================================================
 
 with open("hypothesis_test_results_LW.txt", "w") as f:
 
@@ -353,9 +311,6 @@ with open("hypothesis_test_results_LW.txt", "w") as f:
 
 print("\nResults saved to hypothesis_test_results_LW.txt")
 
-# =========================================================
-# DIMENSIONALITY REDUCTION
-# =========================================================
 
 mds = MDS(
     n_components=2,
@@ -371,9 +326,6 @@ pga = PCA(n_components=2)
 ecm_pga = pga.fit_transform(ecm_features)
 lec_pga = pga.fit_transform(lec_features)
 
-# =========================================================
-# PLOTTING
-# =========================================================
 
 fig, axes = plt.subplots(2, 2, figsize=(8, 7))
 
