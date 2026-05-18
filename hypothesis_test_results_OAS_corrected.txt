@@ -1,0 +1,11 @@
+Hypothesis Test Results using OAS
+
+ECM Geometry
+Biswas-Ghosh: 0.0430
+MMD: 0.0770
+Wasserstein: 0.6440
+
+LEC Geometry
+Biswas-Ghosh: 0.0170
+MMD: 0.0420
+Wasserstein: 0.5580

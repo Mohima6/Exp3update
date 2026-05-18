@@ -1,0 +1,11 @@
+Hypothesis Test Results using SCM
+
+ECM Geometry
+Biswas-Ghosh: 0.1040
+MMD: 0.1540
+Wasserstein: 0.6980
+
+LEC Geometry
+Biswas-Ghosh: 0.2190
+MMD: 0.3510
+Wasserstein: 0.8000

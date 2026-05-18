@@ -1,0 +1,11 @@
+Hypothesis Test Results for EEG Data – Ledoit-Wolf (LW)
+
+ECM Geometry:
+  Biswas-Ghosh test: p = 0.0180
+  MMD test:          p = 0.0360
+  Wasserstein test:  p = 0.0420
+
+LEC Geometry:
+  Biswas-Ghosh test: p = 0.0220
+  MMD test:          p = 0.0350
+  Wasserstein test:  p = 0.0590
